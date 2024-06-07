@@ -48,20 +48,20 @@ All logs are saved to `app.log` and also output to the console. You can view log
 ### API Endpoints
 
 Status Check Endpoint
-    GET /crm/api/ping - To check Service is up or not
+    GET /ping - To check Service is up or not
 
 Bulk Action List Endpoint
-    GET /crm/api/bulk-actions - Lists all the bulk actions.
+    GET /bulk-actions - Lists all the bulk actions.
 
 
 Bulk Action Creation Endpoint
-    POST /crm/api/bulk-actions - Creates a new bulk action.
+    POST /bulk-actions - Creates a new bulk action.
 
 Bulk Action Status Endpoint
-    GET /crm/api/bulk-actions/:actionId - Retrieves the details about the bulk action.
+    GET /bulk-actions/:actionId - Retrieves the details about the bulk action.
 
 Bulk Action Stats Endpoint
-    GET /crm/api/bulk-actions/:actionId/stats - Retrieves a summary of the bulk action, including success, failure, and skipped counts.
+    GET /bulk-actions/:actionId/stats - Retrieves a summary of the bulk action, including success, failure, and skipped counts.
 
 
 

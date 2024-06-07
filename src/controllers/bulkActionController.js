@@ -44,7 +44,7 @@ exports.createBulkAction = async (updateData, entityVal, res) => {
             entity,
             fieldsToUpdate,
             status: 'pending'
-        });bulkAction
+        });
 
         const channel = getChannel();
         channel.sendToQueue(QUEUE_NAME, Buffer.from(JSON.stringify({ bulkActionId: bulkAction._id })));

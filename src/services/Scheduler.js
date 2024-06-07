@@ -4,7 +4,7 @@ const bulkActionService = require('../services/bulkActionService');
 const logger = require('../config/logger');
 
 const cronScheduler = () => {
-    cron.schedule('* * * * * *', async () => {
+    cron.schedule('*/5 * * * * *', async () => {
         logger.info("Schedule cron started running");
         
         try {

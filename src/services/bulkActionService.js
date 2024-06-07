@@ -19,7 +19,7 @@ const createBulkAction = async (data) => {
 const getBulkActionStats = async (actionId) => {
     const action = await BulkAction.findById(actionId);
     if (!action) {
-        return null;
+        return null;   
     }
 
     return {

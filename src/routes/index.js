@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bulkActionRouter = require('./bulkActions');
-const healthCheckRouter = require('./healthCheck');
+const bulkActionRouter = require('./bulkActions-route');
+const healthCheckRouter = require('./healthCheck-route');
 
 router.use('/bulk-actions', bulkActionRouter);
 router.use('/ping', healthCheckRouter)

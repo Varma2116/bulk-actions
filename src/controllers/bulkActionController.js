@@ -59,6 +59,9 @@ exports.createBulkAction = async (updateData, entityVal, res) => {
 exports.getBulkAction = async (req, res) => {
     try {
         const action = await BulkAction.findById(req.params.actionId);
+        if(!action){
+            res.status(400).json({ "message": "Action not found"});
+        }
         res.json(action);
     } catch (err) {
         logger.warn(`Bulk action not found: ${req.params.actionId}`);
@@ -69,6 +72,9 @@ exports.getBulkAction = async (req, res) => {
 exports.getBulkActionStats = async (req, res) => {
     try {
         const stats = await bulkActionService.getBulkActionStats(req.params.actionId);
+        if(stats == null){
+            return res.status(400).json({ "message": "Action not found"});
+        }
         res.json(stats);
     } catch (err) {
         logger.warn(`Bulk action not found: ${req.params.actionId}`);

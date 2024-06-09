@@ -66,4 +66,4 @@ Bulk Action Stats Endpoint
 
 
 ### Start the application: 
-    node index.js
+    node app.js

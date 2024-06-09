@@ -58,20 +58,6 @@ const consumeMessages = () => {
             }
         }
     });
-
-    channel.consume(QUEUE_NAME, async (msg) => {
-        const { bulkActionId } = JSON.parse(msg.content.toString());
-        console.log(`Received bulk action ID: ${bulkActionId}`);
-
-        try {
-            await batchProcessor.processBatch(bulkActionId);
-            console.log(`Update processed for bulk action ID: ${bulkActionId}`);
-            channel.ack(msg);
-        } catch (err) {
-            console.error('Error processing batch:', err);
-            channel.nack(msg);
-        }
-    }, { noAck: false });
 };
 
 const scheduleBulkAction = async (bulkActionId, scheduledAt) => {
